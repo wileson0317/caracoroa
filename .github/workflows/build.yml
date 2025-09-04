@@ -34,9 +34,12 @@ jobs:
     
     
 
-    # Aceitar licenças e instalar os pacotes necessários
-    yes | sdkmanager --licenses
-    sdkmanager "platform-tools" "platforms;android-31" "build-tools;31.0.0"
+         
+      - name: Install Android SDK
+        run: |
+          sdkmanager "platform-tools" "platforms;android-31" "build-tools;31.0.0"
+
+         
 
 
       - name: Build APK
