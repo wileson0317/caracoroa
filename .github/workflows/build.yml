@@ -28,9 +28,11 @@ jobs:
     unzip -q commandlinetools-linux-9477386_latest.zip -d $HOME/android-sdk/cmdline-tools
     mv $HOME/android-sdk/cmdline-tools/cmdline-tools $HOME/android-sdk/cmdline-tools/latest
 
-    # Configurar variáveis de ambiente
-    export ANDROID_HOME=$HOME/android-sdk
-    export PATH=$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$PATH
+    echo "ANDROID_HOME=$HOME/android-sdk" >> $GITHUB_ENV
+    echo "PATH=$HOME/android-sdk/cmdline-tools/latest/bin:$HOME/android-sdk/platform-tools:$PATH" >> $GITHUB_ENV
+
+    
+    
 
     # Aceitar licenças e instalar os pacotes necessários
     yes | sdkmanager --licenses
