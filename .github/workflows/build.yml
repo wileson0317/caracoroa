@@ -32,4 +32,3 @@ jobs:
         with:
           name: caracoroa-apk
           path: bin/*.apk
-fix: update upload-artifact to v4
